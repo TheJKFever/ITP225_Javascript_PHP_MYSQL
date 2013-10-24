@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jose's Party</title>
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+	var jose_Party = new Array();
+	var picNum = 0;
+	var duration=3000;
+
+	jose_Party[0]=new Image();
+	jose_Party[0].src="img/01.jpg";
+	jose_Party[1]=new Image();
+	jose_Party[1].src="img/02.jpg";
+	jose_Party[2]=new Image();
+	jose_Party[2].src="img/03.jpg";
+	jose_Party[3]=new Image();
+	jose_Party[3].src="img/04.jpg";
+	jose_Party[4]=new Image();
+	jose_Party[4].src="img/05.jpg";
+
+	function advanceSlide(){
+		if( picNum < jose_Party.length - 1) {
+		     picNum++;
+		}
+		else {
+		     picNum = 0;
+		}
+		document.times.src= jose_Party[picNum].src;
+	}
+	function playSlideshow(){
+		if( picNum < jose_Party.length - 1) {
+		     picNum++;
+		}
+		else {
+		     picNum = 0;
+		}
+		document.times.src= jose_Party[picNum].src;
+		timeout=setTimeout('playSlideshow()', duration);
+	}
+	function stopSlideShow(){
+			clearTimeout(timeout);
+	}
+   </script>
+</head>
+<body bgcolor="cornflowerblue">
+    <div align="center"><font face="arial">
+    <h2>Jose's Birthday Party</h2><b>
+	To see slide show, put your mouse on the image.<br />
+	Move your mouse away from the image, to stop it.<br/>
+	Click the image to skip the wait. <br/>
+     <a href="javascript:void(null);"
+		onClick="return advanceSlide();"
+		onMouseOver="return playSlideshow();"
+		onMouseOut="return stopSlideShow()">
+        <img name="times" src="img/01.jpg" align="center"
+	border=8  hspace="10" width="600px">
+      </a>
+	<br />
+    </div>
+
+    <script src="js/utilities.js"></script>
+	<!-- // <script src="js/seasons.js"></script> -->
+</body>
+</html>
